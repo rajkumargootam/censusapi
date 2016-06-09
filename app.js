@@ -1,22 +1,19 @@
 var angularApp = angular.module('governmentApp', ['ngResource','ngRoute']);
 
+angularApp.config(function ($routeProvider){
+  $routeProvider
+  .when ('/',
+  {
+    templateUrl: 'list/main.html',
+    controller: 'GovernmentController',
+    controllerAs: 'hm'
+  })
+  });
 
 
-
-
-
-
-
-
-
-
-
-angularApp.controller("mainController",function($resource){
+angularApp.controller("GovernmentController",['$resource',function($resource){
   var vm=this;
-  vm.getInfo = function(){
-    console.log(vm.cityName);
-    var govResource = $resource('http://api.openweathermap.org/data/2.5/weather',
-      {q:vm.cityName,appid:'27d43832d2a4adcb97fcbfa23db130aa'});
-    vm.weather = weatherResource.get();
-   }
-});
+   var govtResource = $resource('http://api.census.gov/data/timeseries/idb/1year?get=AREA_KM2,NAME,AGE,POP&FIPS=IN&time=2012&SEX=0');
+   vm.govResponse = govResource.get();
+   console.log(vm.govResponse);
+}]);
