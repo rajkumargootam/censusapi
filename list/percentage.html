@@ -2,31 +2,32 @@
   <h3><center>census App</center></h3>
 </div>
 <form name="myForm" id="result">
-    <select class="form-control form-control-lg" name="singleSelect" ng-model="hm.country">
+    <select class="form-control form-control-lg" name="singleSelect" ng-model="pc.country">
       <option value="IN">India</option>
       <option value="US">United States</option>
       <option value="UK">United Kingdom</option>
       <option value="CA">Canada</option>
     </select>
-    <select class="form-control form-control-lg" name="singleSelect" ng-model="hm.year">
+    <select class="form-control form-control-lg" name="singleSelect" ng-model="pc.year1">
       <option value="2010">2010</option>
       <option value="2011">2011</option>
       <option value="2012">2012</option>
       <option value="2013">2013</option>
       <option value="2014">2014</option>
     </select>
-    <select class="form-control form-control-lg" name="singleSelect" ng-model="hm.year">
+    <select class="form-control form-control-lg" name="singleSelect" ng-model="pc.year2">
       <option value="2010">2010</option>
       <option value="2011">2011</option>
       <option value="2012">2012</option>
       <option value="2013">2013</option>
       <option value="2014">2014</option>
     </select>
-    <button class="btn btn-lg btn-success"ng-click="hm.getInfo()">get info</button>
+    <button class="btn btn-lg btn-success"ng-click="pc.getPercent()">get info</button>
+    <a href ="#/" type="button" class="btn btn-danger pull-right">Back</a>
 </form>
      <table class="table table-hover ">
        <tbody>
-         <tr ng-repeat = "n in hm.govtResponse | filter:$ctrl.query">
+         <tr ng-repeat = "n in pc.gResponse | filter:$ctrl.query">
            <td>{{n[0]}}</td>
            <td>{{n[1]}}</td>
            <td>{{n[2]}}</td>

@@ -15,8 +15,10 @@
       <option value="2013">2013</option>
       <option value="2014">2014</option>
     </select>
-    <button class="btn btn-lg btn-success"ng-click="hm.getInfo()">get info</button>
+    <a href ="#/" type="button" class="btn btn-lg btn-success"ng-click="hm.getInfo()">get info</a>
+    <a href ="#/percent" type="button" class="btn btn-danger pull-right">get percent</a>
 </form>
+
      <table class="table table-hover ">
        <tbody>
          <tr ng-repeat = "n in hm.govtResponse | filter:$ctrl.query">
